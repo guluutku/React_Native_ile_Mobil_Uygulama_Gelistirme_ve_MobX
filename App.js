@@ -1,4 +1,3 @@
-/* eslint-disable no-trailing-spaces */
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
@@ -9,6 +8,7 @@
 import React from 'react';
 import {
   StyleSheet,
+  Text,
   View,
 } from 'react-native';
 
@@ -16,7 +16,9 @@ function App() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.slideOne} />
+      <View style={styles.slideOne}>
+        <Text>Merhaba</Text>
+      </View>
       <View style={styles.slideTwo} >
         <View style={[styles.box, styles.box1]} />
         <View style={[styles.box, styles.box2]} />
@@ -34,11 +36,15 @@ const styles = StyleSheet.create({
   slideOne: {
     backgroundColor: '#607D8B',
     flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   slideTwo: {
     backgroundColor: '#FF5722',
     flex: 2,
     flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
   },
 
   box: {

@@ -7,7 +7,7 @@
 
 import React from 'react';
 import {
- StyleSheet,
+  StyleSheet,
   View,
 } from 'react-native';
 
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   },
   slideTwo: {
     backgroundColor: '#FF5722',
-    flex: 1,// 3:6
+    flex: 1, // 3:6
   },
 });
 

@@ -21,8 +21,11 @@ class App extends Component {
   render() {
     return (
       <View style={[styles.container]} >
-        <Image source={require('./src/assets/platform.ios.jpeg')} />
-      </View>
+        <Image
+          // eslint-disable-next-line react-native/no-inline-styles
+          style={{ width: '100%', height: 220 }}
+          source={{ uri: 'https://play-lh.googleusercontent.com/FCcziMA1_M9nGlJo6EnguMKlJ53Yor3tNmSqDUza9w9_wXrFLiAW2cOz-kD8S-N1Vvg' }} />
+      </View >
     );
   }
 

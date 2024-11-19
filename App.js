@@ -11,41 +11,17 @@ import {
   View,
   Button,
   Text,
+  Image,
 } from 'react-native';
 
 // import Card from './src/components/Card';
 
 class App extends Component {
 
-  state = {
-    number: 0,
-  };
-
-  onPressIncrease = () => {
-    this.setState({ number: ++this.state.number });
-  };
-
-
-  onPressDecrease = () => {
-    this.setState({ number: --this.state.number });
-  };
-
   render() {
     return (
       <View style={[styles.container]} >
-        <View>
-          <Text style={styles.number}>{this.state.number}</Text>
-        </View>
-        <Button
-          title="Decrease"
-          color="#000"
-          onPress={this.onPressDecrease}
-        />
-        <Button
-          title="Increase"
-          color="#000"
-          onPress={this.onPressIncrease}
-        />
+        <Image source={require('./src/assets/platform.ios.jpeg')} />
       </View>
     );
   }
@@ -59,9 +35,6 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignContent: 'center',
-  },
-  number: {
-    fontSize: 12,
   },
 });
 

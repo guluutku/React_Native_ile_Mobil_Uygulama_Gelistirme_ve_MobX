@@ -13,7 +13,7 @@ import {
   Text,
 } from 'react-native';
 
-import Card from './src/components/Card';
+// import Card from './src/components/Card';
 
 class App extends Component {
 

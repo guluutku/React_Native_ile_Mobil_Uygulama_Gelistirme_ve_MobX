@@ -8,7 +8,6 @@
 import React, { Component } from 'react';
 import {
   StyleSheet,
-  Text,
   View,
 } from 'react-native';
 
@@ -19,8 +18,8 @@ class App extends Component {
   render() {
     return (
       <View style={[styles.container]} >
-        <Card text="Merhaba" />
-        <Card text="React"/>
+        <Card text="Merhaba" backgroundColor="blue" />
+        <Card text="React" backgroundColor="red" />
       </View>
     );
   }
@@ -31,7 +30,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#FFEB3B',
     flex: 1,
-    flexDirection: 'column',
+    flexDirection: 'row',
     justifyContent: 'center',
     alignContent: 'center',
   },

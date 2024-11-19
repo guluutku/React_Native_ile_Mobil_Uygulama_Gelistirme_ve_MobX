@@ -11,15 +11,25 @@ import {
   SafeAreaView,
 } from 'react-native';
 
-import FlatListExample from './src/components/FlatListExample';
+// import FlatListExample from './src/components/FlatListExample';
+import PlatformExample from './src/components/PlatformExample';
 
 class App extends Component {
+  /*
+    render() {
+      return (
+        <SafeAreaView style={[styles.container]} >
+          <FlatListExample />
+        </SafeAreaView >
+      );
+    }
+  */
 
   render() {
     return (
-      <SafeAreaView style={[styles.container]} >
-        <FlatListExample />
-      </SafeAreaView >
+      <SafeAreaView style={styles.container}>
+        <PlatformExample />
+      </SafeAreaView>
     );
   }
 

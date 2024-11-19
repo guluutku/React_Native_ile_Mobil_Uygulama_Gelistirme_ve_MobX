@@ -10,26 +10,41 @@ import {
   StyleSheet,
   View,
   Button,
+  Text,
 } from 'react-native';
 
 import Card from './src/components/Card';
 
 class App extends Component {
 
-  onPressDetail = () => {
-    // eslint-disable-next-line no-alert
-    alert('Detail Alert');
+  state = {
+    number: 0,
+  };
+
+  onPressIncrease = () => {
+    this.setState({ number: ++this.state.number });
+  };
+
+
+  onPressDecrease = () => {
+    this.setState({ number: --this.state.number });
   };
 
   render() {
     return (
       <View style={[styles.container]} >
-        <Card text="Merhaba" backgroundColor="blue" />
-        <Card text="React Native" backgroundColor="red" />
+        <View>
+          <Text style={styles.number}>{this.state.number}</Text>
+        </View>
         <Button
-          title="Details"
+          title="Decrease"
           color="#000"
-          onPress={this.onPressDetail}
+          onPress={this.onPressDecrease}
+        />
+        <Button
+          title="Increase"
+          color="#000"
+          onPress={this.onPressIncrease}
         />
       </View>
     );
@@ -45,7 +60,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignContent: 'center',
   },
-
+  number: {
+    fontSize: 12,
+  },
 });
 
 export default App;

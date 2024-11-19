@@ -14,7 +14,13 @@ import {
   Image,
 } from 'react-native';
 
-// import Card from './src/components/Card';
+/*
+- contain
+- cover
+- center
+- repeat
+- stretch
+*/
 
 class App extends Component {
 
@@ -22,8 +28,9 @@ class App extends Component {
     return (
       <View style={[styles.container]} >
         <Image
+          resizeMode={'contain'}
           // eslint-disable-next-line react-native/no-inline-styles
-          style={{ width: '100%', height: 220 }}
+          style={{ width: '100%', height: 100 }}
           source={{ uri: 'https://play-lh.googleusercontent.com/FCcziMA1_M9nGlJo6EnguMKlJ53Yor3tNmSqDUza9w9_wXrFLiAW2cOz-kD8S-N1Vvg' }} />
       </View >
     );

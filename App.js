@@ -8,16 +8,18 @@
 import React, { Component } from 'react';
 import {
   StyleSheet,
-  View,
+  SafeAreaView,
 } from 'react-native';
+
+import FlatListExample from './src/components/FlatListExample';
 
 class App extends Component {
 
   render() {
     return (
-      <View style={[styles.container]} >
-
-      </View >
+      <SafeAreaView style={[styles.container]} >
+        <FlatListExample />
+      </SafeAreaView >
     );
   }
 

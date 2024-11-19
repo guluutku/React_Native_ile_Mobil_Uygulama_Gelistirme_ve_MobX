@@ -1,4 +1,3 @@
-/* eslint-disable react-native/no-inline-styles */
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
@@ -10,9 +9,8 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   View,
-  Image,
+  TextInput,
   Text,
-  TouchableOpacity,
 } from 'react-native';
 
 /*
@@ -25,15 +23,29 @@ import {
 
 class App extends Component {
 
-  _onPressButton = () => {
-    // eslint-disable-next-line no-alert
-    alert('Opacity');
+  state = {
+    name: '',
+  };
+
+  _onChangeText = text => {
+    this.setState({
+      name: text,
+    });
   };
 
   render() {
+    const { name } = this.state;
     return (
       <View style={[styles.container]} >
-
+        <Text>{name}</Text>
+        <TextInput
+          value={name}
+          keyboardAppearance="dark"
+          keyboardType="email-address"
+          placeholder="Write a name"
+          onChangeText={this._onChangeText}
+          style={styles.myInput}
+        />
       </View >
     );
   }
@@ -45,7 +57,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFEB3B',
     flex: 1,
     justifyContent: 'center',
-    alignContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 10,
+  },
+  myInput: {
+    width: '100%',
+    height: 40,
+    borderWidth: 2,
+    borderColor: 'black',
   },
 });
 

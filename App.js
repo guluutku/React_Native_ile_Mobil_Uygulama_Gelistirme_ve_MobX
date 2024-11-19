@@ -33,22 +33,7 @@ class App extends Component {
   render() {
     return (
       <View style={[styles.container]} >
-        <TouchableOpacity style={{ marginBottom: 40 }}>
-          <View style={styles.buttonContainer}>
-            <Text style={styles.buttonText}>
-              My Button
-            </Text>
-          </View>
-        </TouchableOpacity>
 
-        <TouchableOpacity
-          onPress={this._onPressButton}
-        >
-          <Image
-            style={{ width: 100, height: 100 }}
-            source={require('./src/assets/button.png')}
-          />
-        </TouchableOpacity>
       </View >
     );
   }
@@ -61,14 +46,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignContent: 'center',
-  },
-  buttonTitle: {
-    fontSize: 24,
-  },
-  buttonContainer: {
-    padding: 15,
-    backgroundColor: 'orange',
-    borderRadius: 15,
   },
 });
 

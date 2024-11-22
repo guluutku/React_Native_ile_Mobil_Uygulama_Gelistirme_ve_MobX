@@ -9,35 +9,64 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   SafeAreaView,
+  View,
+  Text,
 } from 'react-native';
+import axios from 'axios';
 
 // import FlatListExample from './src/components/FlatListExample';
-import PlatformExample from './src/components/PlatformExample';
+// import PlatformExample from './src/components/PlatformExample';
 
 class App extends Component {
-  /*
-    render() {
-      return (
-        <SafeAreaView style={[styles.container]} >
-          <FlatListExample />
-        </SafeAreaView >
-      );
-    }
-  */
+
+  state = {
+    name: '',
+    surname: '',
+    loading: true,
+  };
+
+  componentDidMount() {
+    axios.get('https://randomuser.me/api')
+      .then(user => user.data.results[0])
+      .then(user => {
+        this.setState({
+          name: user.name.first,
+          surname: user.name.last,
+          loading: false,
+        });
+      });
+  }
 
   render() {
+    const { name, surname, loading } = this.state;
+
     return (
-      <SafeAreaView style={styles.container}>
-        <PlatformExample />
-      </SafeAreaView>
+      <SafeAreaView style={[styles.container]} >
+        {/*<FlatListExample />*/}
+        <View>
+          {loading && <Text>LOADING...</Text>}
+          <Text>{name} {surname}</Text>
+        </View>
+      </SafeAreaView >
     );
   }
 
+  /*
+    render() {
+      return (
+        <SafeAreaView style={styles.container}>
+          <PlatformExample />
+        </SafeAreaView>
+      );
+    }
+  */
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 

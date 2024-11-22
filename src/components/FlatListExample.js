@@ -16,6 +16,7 @@ class FlatListExample extends Component {
 
     state = {
         text: '',
+        page: 1,
         contacts: [],
         allContacts: [],
         loading: true,
@@ -29,12 +30,21 @@ class FlatListExample extends Component {
         this.setState({
             loading: true,
         });
-        const { data: { results: contacts } } = await axios.get('https://randomuser.me/api/?results=30');
+        const { data: { results: contacts } } = await axios.get(`https://randomuser.me/api/?results=10&page=${this.state.page}`);
+        const users = [...this.state.contacts, ...contacts];
 
         this.setState({
-            contacts,
+            contacts: users,
             allContacts: contacts,
             loading: false,
+        });
+    };
+
+    loadMore = async () => {
+        this.setState({
+            page: this.state.page + 1,
+        }, () => {
+            this.getContacts();
         });
     };
 
@@ -93,6 +103,10 @@ class FlatListExample extends Component {
             <View>
                 <ActivityIndicator
                     size="large"
+                    // eslint-disable-next-line react-native/no-inline-styles
+                    style={{
+                        paddingVertical: 15,
+                    }}
                 />
             </View>
         );
@@ -106,6 +120,8 @@ class FlatListExample extends Component {
                 renderItem={this.renderContactsItem}
                 keyExtractor={item => item.login.uuid}
                 data={this.state.contacts}
+                onEndReached={this.loadMore}
+                onEndReachedThreshold={0}
             />
 
         );

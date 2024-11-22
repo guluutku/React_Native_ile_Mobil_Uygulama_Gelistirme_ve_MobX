@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+    KeyboardAvoidingView,
     ScrollView,
     StyleSheet,
     Text,
@@ -14,19 +15,21 @@ function Login() {
         <View style={styles.container}>
             <View style={styles.headBackground} />
 
-            <View>
-                <Text style={styles.logo}>UDAC</Text>
-                <Text style={styles.logoDescription}>Property & Survey</Text>
-            </View>
-
-            <ScrollView>
-                <View style={styles.loginArea}>
-                    <Text style={styles.loginAreaTitle}>Property Tax Server</Text>
-                    <Text style={styles.loginAreaDescription}>Unique Door No Easily Fill Your Entire Property Tax Using App</Text>
-
-                    <LoginForm />
+            <KeyboardAvoidingView behavior={'position'}>
+                <View>
+                    <Text style={styles.logo}>UDAC</Text>
+                    <Text style={styles.logoDescription}>Property & Survey</Text>
                 </View>
-            </ScrollView>
+
+                <ScrollView>
+                    <View style={styles.loginArea}>
+                        <Text style={styles.loginAreaTitle}>Property Tax Server</Text>
+                        <Text style={styles.loginAreaDescription}>Unique Door No Easily Fill Your Entire Property Tax Using App</Text>
+
+                        <LoginForm />
+                    </View>
+                </ScrollView>
+            </KeyboardAvoidingView>
         </View>
     );
 }

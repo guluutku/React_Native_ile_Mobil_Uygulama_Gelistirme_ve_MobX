@@ -12,13 +12,12 @@ import {
 } from 'react-native';
 import axios from 'axios';
 
-import data from '../../data';
-
 class FlatListExample extends Component {
 
     state = {
         text: '',
         contacts: [],
+        allContacts: [],
         loading: true,
     };
 
@@ -34,6 +33,7 @@ class FlatListExample extends Component {
 
         this.setState({
             contacts,
+            allContacts: contacts,
             loading: false,
         });
     };
@@ -56,8 +56,8 @@ class FlatListExample extends Component {
     };
 
     searchFilter = text => {
-        const newData = data.filter(item => {
-            const listItem = `${item.name.toLowerCase()} ${item.company.toLowerCase()} `;
+        const newData = this.state.allContacts.filter(item => {
+            const listItem = `${item.name.first.toLowerCase()} ${item.name.last.toLowerCase()} ${item.location.state.toLowerCase()} `;
 
             return listItem.indexOf(text.toLowerCase()) > -1;
         });

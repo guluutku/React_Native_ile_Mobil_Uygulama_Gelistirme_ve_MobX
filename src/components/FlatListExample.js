@@ -8,7 +8,9 @@ import {
     TouchableOpacity,
     TextInput,
     FlatList,
+    ActivityIndicator,
 } from 'react-native';
+import axios from 'axios';
 
 import data from '../../data';
 
@@ -16,7 +18,24 @@ class FlatListExample extends Component {
 
     state = {
         text: '',
-        contacts: data,
+        contacts: [],
+        loading: true,
+    };
+
+    componentDidMount() {
+        this.getContacts();
+    }
+
+    getContacts = async () => {
+        this.setState({
+            loading: true,
+        });
+        const { data: { results: contacts } } = await axios.get('https://randomuser.me/api/?results=30');
+
+        this.setState({
+            contacts,
+            loading: false,
+        });
     };
 
     renderContactsItem = ({ item, index }) => {
@@ -25,12 +44,12 @@ class FlatListExample extends Component {
             <TouchableOpacity style={[styles.itemContainer, { backgroundColor: index % 2 === 1 ? '#fafafa' : '' }]}>
                 <Image
                     style={styles.avatar}
-                    source={{ uri: item.picture }}
+                    source={{ uri: item.picture.thumbnail }}
                 />
 
                 <View style={styles.textContainer}>
-                    <Text style={styles.name}>{item.name}</Text>
-                    <Text>{item.company}</Text>
+                    <Text style={styles.name}>{item.name.first} {item.name.last}</Text>
+                    <Text>{item.location.state}</Text>
                 </View>
             </TouchableOpacity>
         );
@@ -66,14 +85,29 @@ class FlatListExample extends Component {
         );
     };
 
+    renderFooter = () => {
+        if (!this.state.loading) {
+            return;
+        }
+        return (
+            <View>
+                <ActivityIndicator
+                    size="large"
+                />
+            </View>
+        );
+    };
+
     render() {
         return (
             <FlatList
+                ListFooterComponent={this.renderFooter()}
                 ListHeaderComponent={this.renderHeader()}
                 renderItem={this.renderContactsItem}
-                keyExtractor={item => item._id}
+                keyExtractor={item => item.login.uuid}
                 data={this.state.contacts}
             />
+
         );
     }
 }

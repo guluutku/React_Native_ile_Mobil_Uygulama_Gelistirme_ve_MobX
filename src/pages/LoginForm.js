@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 import Input from '../components/Input';
+import MyButton from '../components/MyButton';
 
 export default class LoginForm extends Component {
 
@@ -24,6 +25,12 @@ export default class LoginForm extends Component {
                     placeHolder="Password"
                     // eslint-disable-next-line no-return-assign
                     inputRef={input => this.passwordInput = input}
+                />
+
+                <MyButton
+                    color={'#F1F1F1'}
+                    backgroundColor={'#0065E0'}
+                    text="Sign-In"
                 />
             </View>
         );

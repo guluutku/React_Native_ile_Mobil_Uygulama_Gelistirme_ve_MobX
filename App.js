@@ -11,6 +11,7 @@ import {
   SafeAreaView,
   View,
   Text,
+  Button,
 } from 'react-native';
 import axios from 'axios';
 
@@ -26,6 +27,14 @@ class App extends Component {
   };
 
   componentDidMount() {
+    this.getRandomUser();
+  }
+
+  getRandomUser = () => {
+    this.setState({
+      loading: true,
+    });
+
     axios.get('https://randomuser.me/api')
       .then(user => user.data.results[0])
       .then(user => {
@@ -35,7 +44,7 @@ class App extends Component {
           loading: false,
         });
       });
-  }
+  };
 
   render() {
     const { name, surname, loading } = this.state;
@@ -44,8 +53,15 @@ class App extends Component {
       <SafeAreaView style={[styles.container]} >
         {/*<FlatListExample />*/}
         <View>
-          {loading && <Text>LOADING...</Text>}
-          <Text>{name} {surname}</Text>
+          {
+            loading
+              ? <Text>LOADING...</Text>
+              : <Text>{name} {surname}</Text>
+          }
+          <Button
+            title={'Randomize User'}
+            onPress={this.getRandomUser}
+          />
         </View>
       </SafeAreaView >
     );

@@ -37,6 +37,7 @@ class App extends Component {
 
     const { data: { results } } = await axios.get('https://randomuser.me/api');
     const { name: { first, last } } = results[0];
+
     this.setState({
       name: first,
       surname: last,

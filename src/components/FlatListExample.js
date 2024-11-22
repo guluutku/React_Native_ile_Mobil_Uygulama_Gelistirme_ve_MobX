@@ -41,11 +41,14 @@ class FlatListExample extends Component {
     };
 
     loadMore = async () => {
-        this.setState({
-            page: this.state.page + 1,
-        }, () => {
-            this.getContacts();
-        });
+        if (!this.duringMomentum) {
+            this.setState({
+                page: this.state.page + 1,
+            }, () => {
+                this.getContacts();
+            });
+        }
+        this.duringMomentum = true;
     };
 
     renderContactsItem = ({ item, index }) => {
@@ -122,6 +125,7 @@ class FlatListExample extends Component {
                 data={this.state.contacts}
                 onEndReached={this.loadMore}
                 onEndReachedThreshold={0}
+                onMomentumScrollBegin={() => { this.duringMomentum = false; }}
             />
 
         );

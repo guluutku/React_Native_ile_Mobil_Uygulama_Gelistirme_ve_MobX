@@ -6,6 +6,8 @@ import {
     View,
 } from 'react-native';
 
+import LoginForm from './LoginForm';
+
 function Login() {
 
     return (
@@ -21,6 +23,8 @@ function Login() {
                 <View style={styles.loginArea}>
                     <Text style={styles.loginAreaTitle}>Property Tax Server</Text>
                     <Text style={styles.loginAreaDescription}>Unique Door No Easily Fill Your Entire Property Tax Using App</Text>
+
+                    <LoginForm />
                 </View>
             </ScrollView>
         </View>

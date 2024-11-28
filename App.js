@@ -9,7 +9,10 @@ const RootStack = createNativeStackNavigator({
   initialRouteName: 'Home',
   screens: {
     Home: HomeScreen,
-    Detail: DetailScreen,
+    Detail: {
+      screen: DetailScreen,
+      initialParams: { title: 'Default Title' },
+    },
   },
 });
 

@@ -7,13 +7,14 @@ import {
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-function DetailScreen() {
+function DetailScreen({ route }) {
 
     const navigation = useNavigation();
+    const { title } = route.params;
 
     return (
         <View style={styles.container}>
-            <Text>Detail Screen!!!!</Text>
+            <Text>{JSON.stringify(title)}</Text>
 
             <Button
                 title="Go Back"

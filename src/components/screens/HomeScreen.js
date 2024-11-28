@@ -14,8 +14,15 @@ function HomeScreen() {
         <View style={styles.container}>
             <Text>New Home!!!!</Text>
             <Button
-                title="Go To Detail Page"
+                title="Detail 1"
                 onPress={() => navigation.navigate('Detail')}
+            />
+
+            <Button
+                title="Detail 2"
+                onPress={() => navigation.navigate('Detail', {
+                    title: 'Detail2',
+                })}
             />
         </View>
     );

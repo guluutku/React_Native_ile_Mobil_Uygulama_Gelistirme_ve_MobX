@@ -8,6 +8,14 @@ import DetailScreen from './src/components/screens/DetailScreen';
 const RootStack = createNativeStackNavigator({
   initialRouteName: 'Home',
 
+  screenOptions: {
+    headerBackTitle: 'Geri',
+    headerTintColor: '#333',
+    headerTitleStyle: {
+      fontWeight: 'bold',
+    },
+  },
+
   screens: {
     Home: HomeScreen,
 
@@ -16,7 +24,9 @@ const RootStack = createNativeStackNavigator({
       initialParams: { title: 'Default Title' },
       options: ({ route }) => ({
         title: route.params.title,
-        headerBackTitle: 'Geri1',
+        headerStyle: {
+          backgroundColor: 'yellow',
+        },
       }),
     },
   },

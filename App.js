@@ -12,6 +12,9 @@ const RootStack = createNativeStackNavigator({
     Detail: {
       screen: DetailScreen,
       initialParams: { title: 'Default Title' },
+      options: ({ route }) => ({
+        title: route.params.title,
+      }),
     },
   },
 });

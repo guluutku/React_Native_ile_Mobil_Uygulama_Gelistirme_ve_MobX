@@ -9,7 +9,7 @@ function DetailScreen() {
 
     return (
         <View style={styles.container}>
-            <Text>New Home!!!!</Text>
+            <Text>Detail Screen!!!!</Text>
         </View>
     );
 

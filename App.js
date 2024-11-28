@@ -7,13 +7,16 @@ import DetailScreen from './src/components/screens/DetailScreen';
 
 const RootStack = createNativeStackNavigator({
   initialRouteName: 'Home',
+
   screens: {
     Home: HomeScreen,
+
     Detail: {
       screen: DetailScreen,
       initialParams: { title: 'Default Title' },
       options: ({ route }) => ({
         title: route.params.title,
+        headerBackTitle: 'Geri1',
       }),
     },
   },

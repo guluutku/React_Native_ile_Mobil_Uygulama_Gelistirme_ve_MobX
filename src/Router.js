@@ -1,14 +1,19 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import { createStaticNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import {
-    Button,
+    Text,
+    TouchableOpacity,
 } from 'react-native';
 
 import HomeScreen from './components/screens/HomeScreen';
 import DetailScreen from './components/screens/DetailScreen';
+import AboutModal from './components/screens/AboutModal';
+
 
 const RootStack = createNativeStackNavigator({
+
     initialRouteName: 'Home',
 
     screenOptions: {
@@ -24,11 +29,12 @@ const RootStack = createNativeStackNavigator({
             screen: HomeScreen,
             options: {
                 headerRight: () => (
-                    <Button
-                        // eslint-disable-next-line no-alert
-                        onPress={() => alert('This is a button!')}
-                        title="Right"
-                    />
+                    <TouchableOpacity
+                        style={{ margin: 10 }}
+                        onPress={() => { }}
+                    >
+                        <Text style={{ color: '#333' }}>About</Text>
+                    </TouchableOpacity>
                 ),
             },
         },
@@ -46,6 +52,22 @@ const RootStack = createNativeStackNavigator({
     },
 });
 
-const Navigation = createStaticNavigation(RootStack);
+const ModalStack = createNativeStackNavigator({
+    screens: {
+        Main: {
+            screen: RootStack,
+            options: {
+                headerShown: false,
+            },
+        },
+
+        Modal: {
+            screen: AboutModal,
+            mode: 'modal',
+        },
+    },
+});
+
+const Navigation = createStaticNavigation(ModalStack);
 
 export default Navigation;

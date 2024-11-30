@@ -63,9 +63,10 @@ const ModalStack = createNativeStackNavigator({
 
         Modal: {
             screen: AboutModal,
-            mode: 'modal',
         },
     },
+
+    mode: 'modal',
 });
 
 const Navigation = createStaticNavigation(ModalStack);

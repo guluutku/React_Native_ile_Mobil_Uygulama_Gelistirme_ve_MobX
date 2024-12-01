@@ -79,7 +79,7 @@ const Drawer = createDrawerNavigator({
                 drawerLabel: 'Anasayfaya Git',
                 drawerIcon: () => {
                     <Icon
-                        name="accessibility-outline"
+                        name="ios-home"
                         size={22}
                         color="red"
                     />;
@@ -92,6 +92,13 @@ const Drawer = createDrawerNavigator({
             options: {
                 drawerLockMode: 'locked-closed',
                 drawerLabel: 'İletişim',
+                drawerIcon: () => {
+                    <Icon
+                        name="ios-contact"
+                        size={22}
+                        color="red"
+                    />;
+                },
             },
         },
     },

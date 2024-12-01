@@ -2,6 +2,7 @@
 import React from 'react';
 import { createStaticNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import {
     Text,
     TouchableOpacity,
@@ -9,8 +10,8 @@ import {
 
 import HomeScreen from './components/screens/HomeScreen';
 import DetailScreen from './components/screens/DetailScreen';
+import ContactScreen from './components/screens/ContactScreen';
 // import AboutModal from './components/screens/AboutModal';
-
 
 const RootStack = createNativeStackNavigator({
     initialRouteName: 'Home',
@@ -21,6 +22,7 @@ const RootStack = createNativeStackNavigator({
         headerTitleStyle: {
             fontWeight: 'bold',
         },
+        headerShown: false,
     },
 
     screens: {
@@ -51,6 +53,34 @@ const RootStack = createNativeStackNavigator({
     },
 });
 
+const ContactStack = createNativeStackNavigator({
+    screenOptions: {
+        headerBackTitle: 'Geri',
+        headerTintColor: '#333',
+        headerTitleStyle: {
+            fontWeight: 'bold',
+        },
+        headerShown: false,
+    },
+
+    screens: {
+        Contact: {
+            screen: ContactScreen,
+        },
+    },
+});
+
+const Drawer = createDrawerNavigator({
+    screens: {
+        Home: {
+            screen: RootStack,
+        },
+        Contact: {
+            screen: ContactStack,
+        },
+    },
+});
+
 /*
 const ModalStack = createNativeStackNavigator({
     screens: {
@@ -70,6 +100,6 @@ const ModalStack = createNativeStackNavigator({
 });*/
 // const Navigation = createStaticNavigation(ModalStack);
 
-const Navigation = createStaticNavigation(RootStack);
+const Navigation = createStaticNavigation(Drawer);
 
 export default Navigation;

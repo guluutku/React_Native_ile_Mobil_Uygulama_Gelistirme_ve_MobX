@@ -7,22 +7,17 @@ import {
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-function HomeScreen() {
+function ContactScreen({ route }) {
 
     const navigation = useNavigation();
+
     return (
         <View style={styles.container}>
-            <Text>New Home!!!!</Text>
-            <Button
-                title="Detail 1"
-                onPress={() => navigation.navigate('Detail')}
-            />
+            <Text>Contact</Text>
 
             <Button
-                title="Detail 2"
-                onPress={() => navigation.navigate('Detail', {
-                    title: 'Detail 2',
-                })}
+                title="Go Back"
+                onPress={() => navigation.goBack(null)}
             />
         </View>
     );
@@ -37,4 +32,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default HomeScreen;
+export default ContactScreen;

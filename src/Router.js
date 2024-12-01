@@ -9,11 +9,10 @@ import {
 
 import HomeScreen from './components/screens/HomeScreen';
 import DetailScreen from './components/screens/DetailScreen';
-import AboutModal from './components/screens/AboutModal';
+// import AboutModal from './components/screens/AboutModal';
 
 
 const RootStack = createNativeStackNavigator({
-
     initialRouteName: 'Home',
 
     screenOptions: {
@@ -52,6 +51,7 @@ const RootStack = createNativeStackNavigator({
     },
 });
 
+/*
 const ModalStack = createNativeStackNavigator({
     screens: {
         Main: {
@@ -67,8 +67,9 @@ const ModalStack = createNativeStackNavigator({
     },
 
     mode: 'modal',
-});
+});*/
+// const Navigation = createStaticNavigation(ModalStack);
 
-const Navigation = createStaticNavigation(ModalStack);
+const Navigation = createStaticNavigation(RootStack);
 
 export default Navigation;

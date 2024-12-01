@@ -7,12 +7,13 @@ import {
     Text,
     TouchableOpacity,
 } from 'react-native';
-import Icon from '@react-native-vector-icons/Ionicons';
+// import Icon from '@react-native-vector-icons/Ionicons';
 
-import HomeScreen from './components/screens/HomeScreen';
-import DetailScreen from './components/screens/DetailScreen';
-import ContactScreen from './components/screens/ContactScreen';
-// import AboutModal from './components/screens/AboutModal';
+import DetailScreen from './screens/DetailScreen';
+import ContactScreen from './screens/ContactScreen';
+import HomeScreen from './screens/HomeScreen';
+
+// import AboutModal from './screens/AboutModal';
 
 const RootStack = createNativeStackNavigator({
     initialRouteName: 'Home',
@@ -77,13 +78,6 @@ const Drawer = createDrawerNavigator({
             screen: RootStack,
             options: {
                 drawerLabel: 'Anasayfaya Git',
-                drawerIcon: () => {
-                    <Icon
-                        name="ios-home"
-                        size={22}
-                        color="red"
-                    />;
-                },
             },
         },
 
@@ -92,20 +86,15 @@ const Drawer = createDrawerNavigator({
             options: {
                 drawerLockMode: 'locked-closed',
                 drawerLabel: 'İletişim',
-                drawerIcon: () => {
-                    <Icon
-                        name="ios-contact"
-                        size={22}
-                        color="red"
-                    />;
-                },
             },
         },
     },
 
     screenOptions: {
-        drawerPosition: 'right',
+        drawerPosition: 'left',
         drawerWidth: 160,
+        drawerActiveTintColor: '#fff',
+        drawerInActiveTintColor: '#D03932',
     },
 });
 

@@ -7,6 +7,7 @@ import {
     Text,
     TouchableOpacity,
 } from 'react-native';
+import Icon from '@react-native-vector-icons/Ionicons';
 
 import HomeScreen from './components/screens/HomeScreen';
 import DetailScreen from './components/screens/DetailScreen';
@@ -74,10 +75,30 @@ const Drawer = createDrawerNavigator({
     screens: {
         Home: {
             screen: RootStack,
+            options: {
+                drawerLabel: 'Anasayfaya Git',
+                drawerIcon: () => {
+                    <Icon
+                        name="accessibility-outline"
+                        size={22}
+                        color="red"
+                    />;
+                },
+            },
         },
+
         Contact: {
             screen: ContactStack,
+            options: {
+                drawerLockMode: 'locked-closed',
+                drawerLabel: 'İletişim',
+            },
         },
+    },
+
+    screenOptions: {
+        drawerPosition: 'right',
+        drawerWidth: 160,
     },
 });
 

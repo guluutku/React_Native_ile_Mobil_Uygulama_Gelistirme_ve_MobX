@@ -74,7 +74,7 @@ const ContactStack = createNativeStackNavigator({
 
 const Drawer = createDrawerNavigator({
     screens: {
-        Home: {
+        Main: {
             screen: RootStack,
             options: {
                 drawerLabel: 'Anasayfaya Git',
@@ -93,7 +93,7 @@ const Drawer = createDrawerNavigator({
     screenOptions: {
         drawerPosition: 'left',
         drawerWidth: 160,
-        drawerActiveTintColor: '#fff',
+        drawerActiveTintColor: 'blue',
         drawerInActiveTintColor: '#D03932',
     },
 });

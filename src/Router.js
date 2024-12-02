@@ -1,5 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
+import Icon from '@react-native-vector-icons/ionicons';
 
 // Navigation
 import { createStaticNavigation } from '@react-navigation/native';
@@ -14,13 +15,26 @@ const TabNavigator = createBottomTabNavigator({
     screens: {
         Home: {
             screen: Home,
+            options: {
+                tabBarIcon: ({ tintColor }) => (<Icon name="home" size={22} color={tintColor} />),
+            },
         },
         Contacts: {
             screen: Contacts,
+            options: {
+                tabBarIcon: ({ tintColor }) => (<Icon name="contacts" size={22} color={tintColor} />),
+            },
         },
         Settings: {
             screen: Settings,
+            options: {
+                tabBarIcon: ({ tintColor }) => (<Icon name="cog" size={22} color={tintColor} />),
+            },
         },
+    },
+
+    screenOptions: {
+        tabBarActiveTintColor: 'red',
     },
 });
 

@@ -22,6 +22,9 @@ const ContactStack = createNativeStackNavigator({
         },
         ContactDetail: {
             screen: ContactDetail,
+            options: {
+                title: 'Contact Details',
+            },
         },
     },
 });

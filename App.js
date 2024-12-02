@@ -1,27 +1,10 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  Text,
-} from 'react-native';
+
+import Router from './src/Router.js';
 
 function App() {
 
-  return (
-    <SafeAreaView>
-      <Text>New App</Text>
-    </SafeAreaView>
-  );
+  return <Router />;
 }
-
-const styles = StyleSheet.create({
-});
 
 export default App;

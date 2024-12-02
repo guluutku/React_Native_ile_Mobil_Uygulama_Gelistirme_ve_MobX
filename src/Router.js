@@ -12,6 +12,7 @@ import {
 import DetailScreen from './screens/DetailScreen';
 import ContactScreen from './screens/ContactScreen';
 import HomeScreen from './screens/HomeScreen';
+import DrawerMenu from './components/DrawerMenu';
 
 // import AboutModal from './screens/AboutModal';
 
@@ -96,6 +97,7 @@ const Drawer = createDrawerNavigator({
         drawerActiveTintColor: 'blue',
         drawerInActiveTintColor: '#D03932',
     },
+    drawerContent: DrawerMenu,
 });
 
 /*

@@ -6,11 +6,23 @@ import {
   Button,
 } from 'react-native';
 
+const options = {
+  title: 'Select Avatar',
+  customButtons: [{ name: 'fb', text: 'Choose Photo from Facebook' }],
+  storageOptions: {
+    skipBackup: true,
+    path: 'images',
+  },
+};
+
 function App() {
 
   return (
     <View style={styles.container}>
-      <Text>New App</Text>
+      <Button
+        title={'Select Picture'}
+        onPress={() => { }}
+      />
     </View>
   );
 }

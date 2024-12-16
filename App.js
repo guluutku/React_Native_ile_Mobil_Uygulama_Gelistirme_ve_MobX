@@ -9,7 +9,8 @@ import React from 'react';
 // import EasingExample from './components/EasingExample';
 // import Spring from './components/Spring';
 // import Spring2 from './components/Spring2';
-import Parallel from './components/Parallel';
+// import Parallel from './components/Parallel';
+import Sequence from './components/Sequence';
 
 function App() {
 
@@ -23,7 +24,8 @@ function App() {
     // <EasingExample />
     // <Spring />
     // <Spring2 />
-    <Parallel />
+    // <Parallel />
+    <Sequence />
   );
 }
 

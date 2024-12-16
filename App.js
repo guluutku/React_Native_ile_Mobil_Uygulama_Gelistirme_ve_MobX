@@ -1,6 +1,7 @@
 import React from 'react';
 
-import AbsolutePosition from './components/AbsolutePosition';
+//import AbsolutePosition from './components/AbsolutePosition';
+import Interpolation from './components/Interpolation';
 // import MultiField from './components/MultiField';
 // import Timing from './components/Timing';
 // import TranslatePosition from './components/TranslatePosition';
@@ -13,7 +14,8 @@ function App() {
     // <TranslatePosition />
     // <Scale />
     // <MultiField />
-    <AbsolutePosition />
+    // <AbsolutePosition />
+    <Interpolation />
   );
 }
 

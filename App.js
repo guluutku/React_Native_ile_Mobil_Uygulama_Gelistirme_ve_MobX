@@ -6,7 +6,9 @@ import React from 'react';
 // import Timing from './components/Timing';
 // import TranslatePosition from './components/TranslatePosition';
 // import Scale from './components/Scale';
-import EasingExample from './components/EasingExample';
+// import EasingExample from './components/EasingExample';
+// import Spring from './components/Spring';
+import Spring2 from './components/Spring2';
 
 function App() {
 
@@ -17,7 +19,9 @@ function App() {
     // <MultiField />
     // <AbsolutePosition />
     // <Interpolation />
-    <EasingExample />
+    // <EasingExample />
+    // <Spring />
+    <Spring2 />
   );
 }
 

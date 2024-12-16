@@ -10,7 +10,8 @@ import React from 'react';
 // import Spring from './components/Spring';
 // import Spring2 from './components/Spring2';
 // import Parallel from './components/Parallel';
-import Sequence from './components/Sequence';
+// import Sequence from './components/Sequence';
+import Stagger from './components/Stagger';
 
 function App() {
 
@@ -25,7 +26,8 @@ function App() {
     // <Spring />
     // <Spring2 />
     // <Parallel />
-    <Sequence />
+    // <Sequence />
+    <Stagger />
   );
 }
 

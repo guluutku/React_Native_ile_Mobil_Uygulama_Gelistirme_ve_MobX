@@ -6,7 +6,6 @@ import {
     Animated,
     TouchableWithoutFeedback,
 } from 'react-native';
-import { transformer } from '../metro.config';
 
 class TranslatePosition extends Component {
 

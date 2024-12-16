@@ -8,7 +8,8 @@ import React from 'react';
 // import Scale from './components/Scale';
 // import EasingExample from './components/EasingExample';
 // import Spring from './components/Spring';
-import Spring2 from './components/Spring2';
+// import Spring2 from './components/Spring2';
+import Parallel from './components/Parallel';
 
 function App() {
 
@@ -21,7 +22,8 @@ function App() {
     // <Interpolation />
     // <EasingExample />
     // <Spring />
-    <Spring2 />
+    // <Spring2 />
+    <Parallel />
   );
 }
 

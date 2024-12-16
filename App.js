@@ -12,7 +12,8 @@ import React from 'react';
 // import Parallel from './components/Parallel';
 // import Sequence from './components/Sequence';
 // import Stagger from './components/Stagger';
-import Delay from './components/Delay';
+// import Delay from './components/Delay';
+import Loop from './components/Loop';
 
 function App() {
 
@@ -29,7 +30,8 @@ function App() {
     // <Parallel />
     // <Sequence />
     // <Stagger />
-    <Delay />
+    // <Delay />
+    <Loop />
   );
 }
 
